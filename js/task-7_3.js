@@ -18,8 +18,16 @@ const images = [
 
   const galleryElem = document.querySelector('#gallery');
 
-  images.forEach((image) => {
+  /*images.forEach((image) => {
     galleryElem.insertAdjacentHTML(
     "beforeEnd", 
     `<li class="list"><img src="${image.url}" class="image" alt="${image.alt}"></li>`);
-  });
+  });*/
+
+
+
+  const gallery = images.reduce(
+    (acc, item) => acc + `<li class="list"><img src="${item.url}" class="image" alt="${item.alt}"></li>`, "");
+    console.log(gallery);
+    galleryElem.insertAdjacentHTML("beforeEnd", gallery);
+
