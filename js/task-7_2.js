@@ -1,17 +1,15 @@
-const ingredients = [
-    'Картошка',
-    'Грибы',
-    'Чеснок',
-    'Помидоры',
-    'Зелень',
-    'Приправы',
-  ];
+const ingredients = ["Картошка", "Грибы", "Чеснок", "Помидоры", "Зелень", "Приправы"];
 
-  const list = ingredients.map((ingredient) => {
-      const itemElem = document.createElement("li");
-      itemElem.textContent = ingredient;
-      return itemElem;
+const listEl = document.querySelector("#ingredients");
+
+const makeMarkup = array => {
+  return array.map(item => {
+    const itemEl = document.createElement("li");
+    itemEl.textContent = item;
+    return itemEl;
   });
+};
 
-  const ingredientsElem = document.querySelector("#ingredients");
-  ingredientsElem.append(...list);
+const finalMarkup = makeMarkup(ingredients);
+
+listEl.append(...finalMarkup);

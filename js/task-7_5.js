@@ -1,12 +1,12 @@
-const inputElem = document.querySelector('#name-input');
-const nameOutputElem = document.querySelector("#name-output");
+const inputEl = document.querySelector("#name-input");
+const nameEl = document.querySelector("#name-output");
 
-inputElem.addEventListener("input", onNameOutput);
-
-function onNameOutput(event) {
-    if (event.currentTarget.value !== ``) {
-        nameOutputElem.textContent = event.currentTarget.value;
-    } else {
-        nameOutputElem.textContent = "Незнакомец";
-    }
+function changeName(event) {
+  if (event.currentTarget.value !== ``) {
+    nameEl.textContent = event.currentTarget.value;
+  } else {
+    nameEl.textContent = "Незнакомец";
+  }
 }
+
+inputEl.addEventListener("input", changeName);

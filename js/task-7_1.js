@@ -1,12 +1,11 @@
-const CategoriesElem = document.querySelectorAll(".item");
-console.log(`В списке ${CategoriesElem.length} категории.`);
+const itemsEl = document.querySelectorAll(".item");
+console.log(`В списке ${itemsEl.length} категории.`);
 
-const category = (array) => {
-    array.forEach((element) => {
-        const title = element.querySelector("h2");
-        const itemLi = element.querySelectorAll("li");
-        console.log(`Категория: ${title.textContent}
-        Количество элементов: ${itemLi.length}`);
-    });
+const render = element => {
+  element.forEach(item =>
+    console.log(`Категория: ${item.querySelector("h2").textContent}
+    Количество элементов: ${item.querySelectorAll("li").length}`)
+  );
 };
-category(CategoriesElem);
+
+render(itemsEl);
